@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
     const menuItems = [
         { path: '/', label: 'menu-button-1' },
-        { path: '/about', label: 'menu-button-2' },
+        { path: '/addition', label: 'Добавить устройство' },
         { path: '/services', label: 'menu-button-3' },
         { path: '/portfolio', label: 'menu-button-4' },
         { path: '/contact', label: 'menu-button-5' }
@@ -14,18 +15,17 @@ const Header = () => {
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.logoContainer}>
-                    <a href="/" className={styles.logoLink}>
-                        {/* Логотип можно ставить здесь или использовать отдельный компонент */}
+                    <Link to="/" className={styles.logoLink}>
                         <span className={styles.logoText}>Telemetry</span>
-                    </a>
+                    </Link>
                 </div>
                 
                 <ul className={styles.menu}>
                     {menuItems.map((item) => (
                         <li key={item.path} className={styles.menuItem}>
-                            <a href={item.path} className={styles.menuLink}>
+                            <Link to={item.path} className={styles.menuLink}>
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
