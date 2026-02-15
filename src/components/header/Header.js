@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 
 const Header = () => {
     const menuItems = [
-        { path: '/', label: 'menu-button-1' },
+        { path: '/list', label: 'Список устройств' },
         { path: '/addition', label: 'Добавить устройство' },
         { path: '/services', label: 'menu-button-3' },
         { path: '/portfolio', label: 'menu-button-4' },

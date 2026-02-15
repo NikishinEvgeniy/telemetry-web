@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
-import AdditionDeviceForm from './components/form/addition/AdditionDeviceForm';
+import AdditionDeviceForm from './components/addition/form/AdditionDeviceForm';
+import DeviceListPage from './components/list/page/DeviceListPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/addition" element={<AdditionDeviceForm />} />
+                <Route path="/list" element={<DeviceListPage />} />
             </Routes>
         </BrowserRouter>
       </div>
