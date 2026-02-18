@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
+import { useAdditionalDevice } from '../hocks/useAdditionalDevice';
 import { Container, Typography, Paper, TextField, Button, Stack, Toolbar } from '@mui/material';
 
+const initialState = {
+    name: '',
+};
+
 const AdditionDeviceForm = () => {
-  const [deviceName, setDeviceName] = useState('');
+  const [device, setDevice] = useState(initialState);
+  const addDevice = useAdditionalDevice();
+
+  const handleChange = (e) => {
+    setDevice({...device, name: e.target.value});
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Имя устройства:', deviceName);
-    // Отправка на бек
+    addDevice(device);
+    setDevice(initialState);
   };
 	return (
 	<>
@@ -23,8 +33,8 @@ const AdditionDeviceForm = () => {
                             fullWidth
                             label="Название устройства"
                             variant="outlined"
-                            value={deviceName}
-                            onChange={(e) => setDeviceName(e.target.value)}
+                            value={device.name}
+                            onChange={handleChange}
                             required/>
                         <Button 
                             type="submit" 
