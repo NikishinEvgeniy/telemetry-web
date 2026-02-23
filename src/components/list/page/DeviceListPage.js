@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Toolbar } from '@mui/material';
 import DeviceList from '../list/DeviceList';
+import { Container, Toolbar } from '@mui/material';
 import { useFetchDevices } from '../hooks/useFetchDevices';
 
 function DeviceListPage() {

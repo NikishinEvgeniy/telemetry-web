@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardActionArea, Typography } from '@mui/material';
 
 function DeviceCard({ device }) {
@@ -9,7 +10,7 @@ function DeviceCard({ device }) {
             borderRadius: 3,
             boxShadow: 3
         }}>
-            <CardActionArea sx={{ height: '100%' }}>
+            <CardActionArea sx={{ height: '100%' }} component={Link} to={`/list/${device.id}`}>
                 <CardContent sx={{ 
                     height: '100%',
                     display: 'flex',
