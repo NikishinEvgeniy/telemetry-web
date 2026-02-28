@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAdditionalDevice } from '../hocks/useAdditionalDevice';
+import { useAdditionalDevice } from '../hooks/useAdditionalDevice';
 import { Container, Typography, Paper, TextField, Button, Stack, Toolbar } from '@mui/material';
 
 const initialState = {
