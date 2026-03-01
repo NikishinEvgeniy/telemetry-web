@@ -1,4 +1,5 @@
 import { Card, CardContent, Typography, Box, Divider } from "@mui/material";
+import DeleteDeviceButton from "../button/DeleteDeviceButton";
 
 function DeviceFetchForm({ device }) {
     return (
@@ -11,10 +12,13 @@ function DeviceFetchForm({ device }) {
             }}
         >
             <CardContent sx={{ p: 4 }}>
-                <Typography variant="h5" fontWeight={500} gutterBottom>
-                    {device.name}
-                </Typography>
-                
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Typography variant="h5" fontWeight={500} gutterBottom>
+                        {device.name}
+                    </Typography>
+                    <DeleteDeviceButton id={device.id}/>
+                </Box>
+
                 <Divider sx={{ my: 2 }} />
                 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
